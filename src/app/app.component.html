@@ -1,0 +1,34 @@
+<div class="pipes">
+  <h1>Pipes</h1>
+  <h2>Built-in Pipes</h2>
+  <h3>Pipe To Uppercase</h3>
+  <p>{{myValue | uppercase}}</p>
+  <h3>Pipe To Date</h3>
+  <p>{{myDate | date}}</p>
+  <p>{{myDate | date:"MM/dd/yy"}}</p>
+  <h3>Pipe To Slice and Cut Data</h3>
+  <p>{{myValue | slice:2}}</p>
+  <p>{{myValue | slice:3:7}}</p>
+  <h2>Combine Pipes</h2>
+  <hr>
+  <!--El orden de las pipes importa en ciertos casos
+  y no afecta el contenido solo es la forma de mostrar informacion-->
+  <p>{{myValue | slice:3:7 | uppercase}}</p>
+  <hr>
+  <h2>My CUSTOM PIPE</h2>
+  <h3>Double Value Pipe</h3>
+  <!--keyup  sirve para decirle a Angular que actualize la UI
+  osea que detecte los cambios-->
+  <input type="text" #input (keyup)="0">
+  <p>{{input.value | mydouble}}</p>
+  <h2>My Filter Custome Pipe</h2>
+  <ul>
+    <li *ngFor="let item of values  | filter:'esa'">{{item}}</li>
+  </ul>
+  <input type="text" #newItem>
+  <button (click)="values.push(newItem.value)" class="btn btn-primary">Add Item</button>
+  <hr>
+  <h2>Async Pipes</h2>
+  <p>{{asyncValue | async}}</p>
+  <br><br><br><br><br><br><br><br>
+</div>
